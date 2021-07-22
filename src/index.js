@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import 'src/styles/index.scss';
+import App from 'src/views/App';
+import reportWebVitals from 'src/utils/reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -11,7 +11,7 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+// 如果你想开始在你的应用程序中测量性能，传递一个函数
+//记录结果（例如：reportWebVitals（console.log））
+//或发送到分析端点。了解更多：https://bit.ly/CRA-vitals
 reportWebVitals();

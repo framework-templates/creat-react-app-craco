@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# 创建 React 应用程序入门
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+这个项目是用 [Create React App](https://github.com/facebook/create-react-app)引导的.
 
-## Available Scripts
+## 可用脚本
 
-In the project directory, you can run:
+在项目目录中，您可以运行：
 
 ### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+在开发模式下运行应用程序。
+打开 http://localhost:3000 在浏览器中查看。
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+如果您进行编辑，页面将重新加载。
+您还将在控制台中看到任何 lint 错误。
 
 ### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+在交互式观察模式下启动测试运行器。
+有关更多信息，请参阅有关运行测试的部分。
 
 ### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+将用于生产的应用程序构建到 build 文件夹中。
+它在生产模式下正确地捆绑了 React 并优化了构建以获得最佳性能。
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+构建被缩小，文件名包括哈希值。
+您的应用程序已准备好部署！
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+有关更多信息，请参阅有关部署的部分。
 
 ### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**注意：这是一种单向操作。一旦你 eject，你不能回去！**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+如果您对构建工具和配置选择不满意，您可以 eject 随时进行。此命令将从您的项目中删除单个构建依赖项。
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+相反，它会将所有配置文件和可传递依赖项（webpack、Babel、ESLint 等）复制到您的项目中，以便您可以完全控制它们。除了所有命令 eject 仍然有效，但它们将指向复制的脚本，以便您可以调整它们。在这一点上，你是靠自己的。
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+您不必永远使用 eject. 精选功能集适用于中小型部署，您不应该觉得有义务使用此功能。但是我们知道，如果您在准备好时无法对其进行自定义，则此工具将没有用处。
+### 高级配置
 
-## Learn More
+本节已移至此处： [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
