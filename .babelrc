@@ -1,3 +1,13 @@
 {
-  "presets": ["react-app"]
+  "presets": [],
+  "plugins": [
+    [
+      "import",
+      {
+        "libraryName": "antd",
+        "libraryDirectory": "es",
+        "style": "css"
+      }
+    ]
+  ]
 }
