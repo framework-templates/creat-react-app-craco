@@ -1,0 +1,12 @@
+.footer-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  max-height: 30px;
+  left: 0;
+  bottom: 0;
+  background: #fff;
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);
+}
