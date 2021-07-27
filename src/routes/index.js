@@ -30,15 +30,14 @@ function RouteWithSubRoutes(route) {
   console.log('route', route.path);
   return (
     <div>
-      {/* {route.redirect && <Redirect from={route.path} to={route.redirect} />} */}
-      <Route
-        path={route.path}
-        render={(props) => (
-          <route.component {...props} routes={route.routes}>
-            {/* {route.routes && route.routes.map((r) => <RouteWithSubRoutes {...r} key={r.path} />)} */}
+      {route.redirect && <Redirect from={route.path} to={route.redirect} />}
+      <Route path={route.path}>
+        {
+          <route.component>
+            {route.routes && route.routes.map((r) => <RouteWithSubRoutes {...r} key={r.path} />)}
           </route.component>
-        )}
-      ></Route>
+        }
+      </Route>
     </div>
   );
 }
@@ -49,7 +48,6 @@ class index extends Component {
       <HashRouter>
         <Switch>
           {routes.map((route) => {
-            console.log(route.path);
             return <RouteWithSubRoutes {...route} key={route.path} />;
           })}
         </Switch>
