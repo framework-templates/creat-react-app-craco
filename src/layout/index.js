@@ -10,10 +10,9 @@ export default class index extends Component {
     super(props);
   }
   render() {
-    const { props } = this;
     return (
       <div className="layout-container">
-        <Header {...props} />
+        <Header />
         <Content>
           <Routes></Routes>
         </Content>

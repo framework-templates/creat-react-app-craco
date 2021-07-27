@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Layout, Menu } from 'antd';
+import { withRouter } from 'react-router-dom';
 import './index.scss';
 const { Header } = Layout;
 class index extends Component {
@@ -43,4 +44,4 @@ class index extends Component {
     );
   }
 }
-export default index;
+export default withRouter(index);
