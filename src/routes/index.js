@@ -7,7 +7,6 @@ import Journal from 'src/views/journal';
 
 class index extends Component {
   render() {
-    console.log(333);
     return (
       <HashRouter>
         <Switch>

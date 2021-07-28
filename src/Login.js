@@ -1,22 +1,32 @@
 import { Component } from 'react';
 import 'src/styles/login.scss';
-// import { withRouter } from 'react-router-dom';
-import { Button, Pagination, Modal, Form, Input, Radio, Row, Col } from 'antd';
-// import api from 'src/api/index.js';
-// console.log(api);
+import { withRouter } from 'react-router-dom';
+import { Button, Form, Input } from 'antd';
+import { login } from 'src/api/common';
+import commonStore from 'src/stores/commonStore';
+
+console.log(commonStore);
 class index extends Component {
   constructor(props) {
     super(props);
     console.log(this.props);
   }
   onFinish = (values) => {
-    console.log(values);
-    // api.common.login(values).then((res) => {
-    //   console.log(res);
-    //   // this.props.history.replace({
-    //   //   path: '/home'
-    //   // });
-    // });
+    login(values)
+      .then((res) => {
+        console.log(commonStore.dispatch({
+          userInfo:{
+            b:1
+          }
+        }));
+        const aaa = commonStore.getState();
+        console.log('aaa', aaa);
+        // commonStore.dispatch({
+        //   token: res.data
+        // });
+        // this.props.history.replace('/home');
+      })
+      .catch(() => {});
   };
   render() {
     return (
@@ -53,4 +63,4 @@ class index extends Component {
   }
 }
 
-export default index;
+export default withRouter(index);

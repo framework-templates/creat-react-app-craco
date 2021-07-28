@@ -7,12 +7,12 @@
  */
 import axios from 'axios';
 import { message } from 'antd';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 import { getToken } from 'src/utils/auth';
 import NProgress from 'nprogress'; // 页面顶部加载进度条
 import 'nprogress/nprogress.css'; // 页面顶部加载进度条样式
 NProgress.configure({ showSpinner: false }); // NProgress Configuration
-let history = useHistory();
+// let history = useHistory();
 // 创建axioc实例
 const service = axios.create({
   baseURL: process.env.REACT_APP_BASE_API // 请求url = baseURL + requestUrl
@@ -41,9 +41,9 @@ service.interceptors.response.use(
     // if the custom code is not 200, it is judged as an error.
     if (code === 403) {
       message.error('重新登录');
-      history.replace({
-        pathname: '/login'
-      });
+      // history.replace({
+      //   pathname: '/login'
+      // });
     } else if (code !== 200) {
       message.error(res.message || 'Error');
       return Promise.reject(new Error(res.message || 'Error'));
