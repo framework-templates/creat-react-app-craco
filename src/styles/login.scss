@@ -1,0 +1,13 @@
+.login-form-container {
+  height: 100%;
+  background: url('~src/assets/images/loginbgi.jpg') no-repeat 50%;
+  background-size: 100% 100%;
+  position: relative;
+
+  .login-form {
+    width: 400px;
+    position: absolute;
+    left: 10%;
+    top: 30%;
+  }
+}

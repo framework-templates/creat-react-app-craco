@@ -4,52 +4,21 @@ import Layout from 'src/layout';
 import Login from 'src/Login';
 import Home from 'src/views/home';
 import Journal from 'src/views/journal';
-const routes = [
-  {
-    path: '/login',
-    component: Login
-  },
-  {
-    path: '/',
-    component: Layout,
-    redirect: '/home',
-    routes: [
-      {
-        path: '/home',
-        component: Home
-      },
-      {
-        path: '/journal',
-        component: Journal
-      }
-    ]
-  }
-];
-
-function RouteWithSubRoutes(route) {
-  console.log('route', route.path);
-  return (
-    <div>
-      {route.redirect && <Redirect from={route.path} to={route.redirect} />}
-      <Route path={route.path}>
-        {
-          <route.component>
-            {route.routes && route.routes.map((r) => <RouteWithSubRoutes {...r} key={r.path} />)}
-          </route.component>
-        }
-      </Route>
-    </div>
-  );
-}
 
 class index extends Component {
   render() {
+    console.log(333);
     return (
       <HashRouter>
         <Switch>
-          {routes.map((route) => {
-            return <RouteWithSubRoutes {...route} key={route.path} />;
-          })}
+          <Route path="/login" component={Login}></Route>
+          <Redirect exact from="/" to="/home" />
+          <Route path="/">
+            <Layout>
+              <Route path="/home" component={Home} />
+              <Route path="/journal" component={Journal} />
+            </Layout>
+          </Route>
         </Switch>
       </HashRouter>
     );

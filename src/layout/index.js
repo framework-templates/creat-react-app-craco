@@ -3,7 +3,6 @@ import './index.scss';
 import Header from 'src/layout/header';
 import Content from 'src/layout/content';
 import Footer from 'src/layout/footer';
-import Routes from 'src/routes';
 
 export default class index extends Component {
   constructor(props) {
@@ -13,9 +12,7 @@ export default class index extends Component {
     return (
       <div className="layout-container">
         <Header />
-        <Content>
-          <Routes></Routes>
-        </Content>
+        <Content>{this.props.children}</Content>
         <Footer />
       </div>
     );

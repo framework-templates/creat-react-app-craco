@@ -5,3 +5,7 @@ body,
   height: 100%;
   overflow: hidden;
 }
+
+.ant-btn+.ant-btn {
+  margin-left: 8px;
+}

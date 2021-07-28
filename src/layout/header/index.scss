@@ -10,4 +10,18 @@
   border-radius: 0 0 4px 4px;
   top: 0;
   box-sizing: border-box;
+
+  &-info {
+    .info-github {
+      width: 30px;
+      cursor: pointer;
+      transform: translateY(-2px);
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    .info-name {}
+  }
 }

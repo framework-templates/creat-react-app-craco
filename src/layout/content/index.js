@@ -8,11 +8,6 @@ export default class content extends Component {
     super(props);
   }
   render() {
-    return (
-      <Content className="content-container">
-        {this.props.children}
-        内容代码块
-      </Content>
-    );
+    return <Content className="content-container">{this.props.children}</Content>;
   }
 }

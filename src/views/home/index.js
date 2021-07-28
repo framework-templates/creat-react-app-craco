@@ -1,8 +1,15 @@
 import { Component } from 'react';
-
+import 'src/views/home/index.scss';
+import xiamuJpg from 'src/assets/images/xiamu.jpg';
 class index extends Component {
   render() {
-    return <div>home</div>;
+    return (
+      <div className="home-container">
+        <p>这个人很懒，什么都没留下</p>
+        <img src={xiamuJpg} />
+        <p>发呆ing</p>
+      </div>
+    );
   }
 }
 
