@@ -1,9 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 // 首先我们需要导入一些组件...
-import Routes from 'src/routes';
-import 'src/styles/index.scss';
-import reportWebVitals from 'src/utils/reportWebVitals';
+import Routes from '@/routes';
+import '@/styles/index.scss';
+import 'quill/dist/quill.core.css';
+import 'quill/dist/quill.snow.css';
+import 'quill/dist/quill.bubble.css';
+import 'highlight.js/styles/atom-one-dark.css';
+import reportWebVitals from '@/utils/reportWebVitals';
 
 ReactDOM.render(<Routes />, document.getElementById('root'));
 

@@ -1,30 +1,24 @@
 import { Component } from 'react';
-import 'src/styles/login.scss';
+import '@/styles/login.scss';
 import { withRouter } from 'react-router-dom';
 import { Button, Form, Input } from 'antd';
-import { login } from 'src/api/common';
-import commonStore from 'src/stores/commonStore';
-
-console.log(commonStore);
+import { login } from '@/api/common';
+import commonStore from '@/stores/commonStore';
+import { setToken } from '@/utils/auth';
 class index extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props);
   }
   onFinish = (values) => {
     login(values)
       .then((res) => {
-        console.log(commonStore.dispatch({
-          userInfo:{
-            b:1
-          }
-        }));
-        const aaa = commonStore.getState();
-        console.log('aaa', aaa);
-        // commonStore.dispatch({
-        //   token: res.data
-        // });
-        // this.props.history.replace('/home');
+        const token = res.data;
+        commonStore.dispatch({
+          type: 'token',
+          value: token
+        });
+        setToken(token);
+        this.props.history.replace('/home');
       })
       .catch(() => {});
   };

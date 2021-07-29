@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { Layout, Button } from 'antd';
 import './index.scss';
-import keepOnRecordImg from 'src/assets/images/keep-on-record.png';
+import keepOnRecordImg from '@/assets/images/keep-on-record.png';
 const { Footer } = Layout;
 export default class index extends Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import 'src/views/home/index.scss';
-import xiamuJpg from 'src/assets/images/xiamu.jpg';
+import '@/views/home/index.scss';
+import xiamuJpg from '@/assets/images/xiamu.jpg';
 class index extends Component {
   render() {
     return (

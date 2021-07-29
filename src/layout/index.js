@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import './index.scss';
-import Header from 'src/layout/header';
-import Content from 'src/layout/content';
-import Footer from 'src/layout/footer';
+import Header from '@/layout/header';
+import Content from '@/layout/content';
+import Footer from '@/layout/footer';
 
 export default class index extends Component {
   constructor(props) {

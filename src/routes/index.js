@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import { HashRouter, Route, Switch, Redirect } from 'react-router-dom';
-import Layout from 'src/layout';
-import Login from 'src/Login';
-import Home from 'src/views/home';
-import Journal from 'src/views/journal';
+import Layout from '@/layout';
+import Login from '@/Login';
+import Home from '@/views/home';
+import Journal from '@/views/journal';
 
 class index extends Component {
   render() {

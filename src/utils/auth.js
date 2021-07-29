@@ -6,15 +6,15 @@
  * @LastEditTime: 2021-05-18 16:18:36
  */
 
-const tokenName = 'token' 
+const tokenName = 'token';
 export function getToken() {
-  return localStorage.getItem(tokenName)
+  return localStorage.getItem(tokenName);
 }
 
 export function setToken(token) {
-  localStorage.setItem(tokenName, token)
+  localStorage.setItem(tokenName, token);
 }
 
 export function removeToken() {
-  localStorage.removeItem(tokenName)
+  localStorage.removeItem(tokenName);
 }

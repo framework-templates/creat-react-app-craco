@@ -1,28 +1,35 @@
 import React, { Component } from 'react';
-import { Button, Pagination, Modal, Form, Input, Radio, Row, Col } from 'antd';
+import { Button, Pagination, Modal, Form, Input, Radio, Row, Col, Spin, message } from 'antd';
 // import { FormInstance } from 'antd/lib/form';
-import JournalTabel from 'src/views/journal/components/journalTabel';
+import { getJournalData, saveJournalData } from '@/api/journal';
+import JournalTabel from '@/views/journal/components/journalTabel';
+import QuillEditor from '@/components/QuillEditor';
 class index extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      total: 500,
-      currentNum: 1,
+      total: 0,
+      pageCount: 1,
       pageSize: 10,
-      visible: false,
+      tableData: [], //表格数据
+      visible: false, //弹窗开关
+      spinning: false, //spri
       initialValues: {
         putShelves: true
       }
     };
     this.formRef = React.createRef();
-    //  this.formRef
+  }
+
+  componentDidMount() {
+    // 获取表格数据
+    this.getJournalData();
   }
 
   onAdd = () => {
     this.setState({
       visible: true
     });
-    console.log('添加', this);
   };
 
   onCancel = () => {
@@ -40,6 +47,13 @@ class index extends Component {
 
   // 表单校验通过后执行
   onFinish = (values) => {
+    saveJournalData(values)
+      .then(() => {
+        this.onCancel();
+        this.getJournalData();
+        message.success('保存成功');
+      })
+      .catch(() => {});
     console.log('Finish:', values);
   };
 
@@ -47,15 +61,53 @@ class index extends Component {
     console.log('radio变化');
   };
 
+  // 获取表格数据
+  getJournalData = () => {
+    this.setState({
+      spinning: true
+    });
+    const { pageCount, pageSize } = this.state;
+    getJournalData({ pageCount, pageSize })
+      .then((res) => {
+        const { list, total } = res.data;
+        this.setState({
+          spinning: false,
+          tableData: list,
+          total
+        });
+      })
+      .catch(() => {});
+  };
+  // 分页变化时
+  onPaginationChange = (pageCount, pageSize) => {
+    console.log(pageCount, pageSize);
+    this.setState(
+      {
+        pageCount,
+        pageSize
+      },
+      () => {
+        this.getJournalData();
+      }
+    );
+  };
+
   render() {
-    const { total, currentNum, visible, initialValues } = this.state;
+    const { tableData, total, pageCount, visible, initialValues, spinning } = this.state;
     return (
       <>
         <Button type="primary" onClick={this.onAdd}>
           添加日志
         </Button>
-        <JournalTabel></JournalTabel>
-        <Pagination defaultCurrent={currentNum} total={total} />
+        <Spin tip="疯狂载入中..." spinning={spinning}>
+          <JournalTabel tableData={tableData} rowKey="id"></JournalTabel>
+          <Pagination
+            current={pageCount}
+            showSizeChanger
+            total={total}
+            onChange={this.onPaginationChange}
+          />
+        </Spin>
         <Modal
           className="journal-form-modal"
           title="日志"
@@ -108,7 +160,7 @@ class index extends Component {
                   name="editorText"
                   rules={[{ required: true, message: '请输入富文本' }]}
                 >
-                  <Input.TextArea />
+                  <QuillEditor></QuillEditor>
                 </Form.Item>
               </Col>
             </Row>

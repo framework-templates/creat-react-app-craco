@@ -1,18 +1,15 @@
 import { createStore } from 'redux';
 
 const commonState = {
-  token: '1',
-  userInfo: { a: 1 }
+  token: '',
+  userInfo: {}
 };
-function common(state = commonState, action) {
-  console.log('action', action);
-  console.log('{ ...state, ...action }', { ...state, ...action });
+function reducer(state, action) {
+  if (action.type) {
+    state[action.type] = action.value;
+  }
   return state;
 }
 
-let commonStore = createStore(common);
-commonStore.subscribe(() => console.log(commonStore.getState()));
-commonStore.dispatch({
-  token: '12312312'
-});
+let commonStore = createStore(reducer, commonState);
 export default commonStore;
